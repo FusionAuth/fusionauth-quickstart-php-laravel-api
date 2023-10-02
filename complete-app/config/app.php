@@ -185,4 +185,16 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    | FusionAuth instance config
+    |--------------------------------------------------------------------------
+    |
+    | Retrieving FusionAuth instance settings.
+    |
+    */
+    'fusionauth' => [
+        'url' => rtrim(env('FUSIONAUTH_URL'), '/'),
+        'client_id' => env('FUSIONAUTH_CLIENT_ID'),
+    ],
 ];
