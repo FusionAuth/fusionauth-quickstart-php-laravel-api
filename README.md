@@ -1,6 +1,6 @@
-# Quickstart: Laravel Resource Server with FusionAuth
+# Quickstart: Laravel API with FusionAuth
 
-This repository contains a Laravel application that works with a locally-running instance of [FusionAuth](https://fusionauth.io/), the authentication and authorization platform.
+This repository contains a Laravel API that works with a locally-running instance of [FusionAuth](https://fusionauth.io/), the authentication and authorization platform.
 
 ## Setup
 
@@ -67,13 +67,13 @@ curl --location 'https://local.fusionauth.io/api/login' \
 You can take the token from the response and then call one of the endpoints listed above by calling:
 
 ```sh
-curl --cookie 'app.at=<your_token>' 'http://localhost/make-change?total=5.12' \
+curl --cookie 'app.at=<your_token>' 'http://localhost/make-change?total=5.12'
 ```
 
 or
 
 ```sh
-curl --cookie 'app.at=<your_token>' --request POST 'http://localhost/panic' \
+curl --cookie 'app.at=<your_token>' --request POST 'http://localhost/panic'
 ```
 
 ### Further Information
