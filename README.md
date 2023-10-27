@@ -47,14 +47,14 @@ composer install
 ./vendor/bin/sail up -d
 ```
 
-The app is now serving two api endpoints
- - [http://localhost/make-change](http://localhost/make-change) - this endpoint calculates the change to make from a given total.
- - [http://localhost/panic](http://localhost/panic) - this endpoint simulates notifying the police of an incident.
+The app is now serving two api endpoints:
+ - [http://localhost/api/make-change](http://localhost/api/make-change) - this endpoint calculates the change to make from a given total.
+ - [http://localhost/api/panic](http://localhost/api/panic) - this endpoint simulates notifying the police of an incident.
 
 You can log in with a user preconfigured during Kickstart, `teller@example.com` with the password of `password`, by calling:
 
 ```sh
-curl --location 'https://local.fusionauth.io/api/login' \
+curl --location 'http://localhost:9011/api/login' \
 --header 'Authorization: this_really_should_be_a_long_random_alphanumeric_value_but_this_still_works' \
 --header 'Content-Type: application/json' \
 --data-raw '{
