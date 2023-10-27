@@ -35,11 +35,11 @@ class Audience extends BaseAudienceClaim
             $this->expectedValue = \strtolower(config('app.fusionauth.client_id'));
         }
 
-        // If we have specified valid values, we check if the current audience is present there
         if (empty($this->expectedValue)) {
             return false;
         }
 
+        // If we have specified valid values, we check if the current audience is present there
         return \strtolower($value) === $this->expectedValue;
     }
 }
