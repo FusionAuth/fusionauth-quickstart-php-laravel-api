@@ -12,7 +12,8 @@
     "tellerUserId": "00000000-0000-0000-0000-111111111111",
     "customerEmail": "customer@example.com",
     "customerPassword": "password",
-    "customerUserId": "00000000-0000-0000-0000-222222222222"
+    "customerUserId": "00000000-0000-0000-0000-222222222222",
+    "lambdaId": "cc84e6dd-aa48-4205-8be6-088e4593884d"
   },
   "apiKeys": [
     {
@@ -39,6 +40,19 @@
           "algorithm": "RS256",
           "name": "For Example Laravel API",
           "length": 2048
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "/api/lambda/#{lambdaId}",
+      "body": {
+        "lambda": {
+          "body": "function populate(jwt, user, registration)\n{\n    jwt.email = user.email;\n    jwt.email_verified = user.verified;\n}",
+          "debug": false,
+          "engineType": "GraalJS",
+          "name": "Add Email to JWT for Laravel Quickstart",
+          "type": "JWTPopulate"
         }
       }
     },
@@ -80,6 +94,9 @@
             "enabled": true,
             "accessTokenKeyId": "#{asymmetricKeyId}",
             "idTokenKeyId": "#{asymmetricKeyId}"
+          },
+          "lambdaConfiguration": {
+            "accessTokenPopulateId": "#{lambdaId}"
           },
           "registrationConfiguration": {
             "enabled": true
