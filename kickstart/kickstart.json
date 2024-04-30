@@ -48,7 +48,7 @@
       "url": "/api/lambda/#{lambdaId}",
       "body": {
         "lambda": {
-          "body": "function populate(jwt, user, registration)\n{\n    jwt.email = user.email;\n    jwt.email_verified = user.verified;\n}",
+          "body": "function populate(jwt, user, registration){ jwt.email = user.email; jwt.email_verified = user.verified; }",
           "debug": false,
           "engineType": "GraalJS",
           "name": "Add Email to JWT for Laravel Quickstart",
