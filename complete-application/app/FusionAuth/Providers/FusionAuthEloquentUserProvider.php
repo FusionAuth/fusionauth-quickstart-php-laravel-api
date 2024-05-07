@@ -23,10 +23,7 @@ class FusionAuthEloquentUserProvider extends EloquentUserProvider
         $email = $payload->get('email');
         /** @var \App\Models\User $model */
         $model = $this->createModel()
-            ->setAttribute('id', $payload->get('sub'))
-            ->setAttribute('email', $email)
-            ->setAttribute('name', $email)
-            ->setAttribute('email_verified', !!$payload->get('email_verified'));
+            ->setAttribute('id', $payload->get('sub'));
         return $model;
     }
 }
