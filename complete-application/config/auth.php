@@ -35,14 +35,12 @@ return [
     |
     */
 
-    // tag::guards
     'guards' => [
         'web' => [
             'driver' => 'jwt',
             'provider' => 'users',
         ],
     ],
-    // end::guards
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +59,6 @@ return [
     |
     */
 
-    // tag::providers
     'providers' => [
         'users' => [
             'driver' => 'fusionauth_eloquent',
@@ -73,7 +70,6 @@ return [
         //     'table' => 'users',
         // ],
     ],
-    // end::providers
 
     /*
     |--------------------------------------------------------------------------

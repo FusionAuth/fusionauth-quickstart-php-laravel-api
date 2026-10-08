@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+# the quickstart ships these so readers can run it as-is
+!.env
+!.env.example

@@ -155,7 +155,6 @@ return [
     |
     */
 
-    //tag::providers
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
          * Package Service Providers...
@@ -171,7 +170,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\FusionAuth\Providers\FusionAuthServiceProvider::class,
     ])->toArray(),
-    //end::providers
 
     /*
     |--------------------------------------------------------------------------
@@ -188,7 +186,6 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
-    //tag::fusionauth
     /*
     |--------------------------------------------------------------------------
     | FusionAuth instance config
@@ -201,5 +198,4 @@ return [
         'url' => rtrim(env('FUSIONAUTH_URL'), '/'),
         'client_id' => env('FUSIONAUTH_CLIENT_ID'),
     ],
-    //end::fusionauth
 ];
